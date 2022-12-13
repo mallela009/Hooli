@@ -19,7 +19,8 @@ pipeline{
              sh 'mvn compile'
             }
         }
-        post {
+    }
+        post{
             always{
                 echo "archieve the artifacts"
                 archieveArtifacts artifacts: '**/target/*.war'
@@ -33,4 +34,4 @@ pipeline{
          }
         }
     }
-}
+
