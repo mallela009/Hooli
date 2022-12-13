@@ -19,8 +19,8 @@ pipeline{
              sh 'mvn compile'
             }
         }
-        post{
-            success{
+        post {
+            always{
                 echo "archieve the artifacts"
                 archieveArtifacts artifacts: '**/target/*.war'
             }
